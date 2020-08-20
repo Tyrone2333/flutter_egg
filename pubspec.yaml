@@ -1,6 +1,6 @@
 name: flutter_egg
-description: A new Flutter package.
-version: 1.0.1
+description: 像安卓彩蛋一样的隐藏功能,通过多次点击可触发彩蛋
+version: 1.0.3
 homepage: https://github.com/Tyrone2333/flutter_egg
 
 environment:

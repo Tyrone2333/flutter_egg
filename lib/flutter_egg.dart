@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 typedef OnTapCallBack = void Function(int tapNum, int neededNum);
 
 /// 隐藏彩蛋,多次点击后触发
-class FlutterEgg extends StatefulWidget {
+class Egg extends StatefulWidget {
   final Widget child;
 
   /// 总共需要点击的次数
@@ -16,7 +16,7 @@ class FlutterEgg extends StatefulWidget {
   final OnTapCallBack onTrigger;
   final OnTapCallBack onTap;
 
-  FlutterEgg({
+  Egg({
     this.child,
     this.neededNum = 5,
     this.interval = const Duration(seconds: 1),
@@ -25,10 +25,10 @@ class FlutterEgg extends StatefulWidget {
   });
 
   @override
-  _FlutterEggState createState() => _FlutterEggState();
+  _EggState createState() => _EggState();
 }
 
-class _FlutterEggState extends State<FlutterEgg> {
+class _EggState extends State<Egg> {
   List<DateTime> tapTimeList = [];
 
   @override

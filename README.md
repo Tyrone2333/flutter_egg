@@ -7,7 +7,7 @@
 
 # 使用
 ```
-            FlutterEgg(
+            Egg(
               neededNum: 5,
               onTap: (int tapNum, int neededNum) {
                 if (tapNum > 1 && tapNum < 5) {
@@ -26,25 +26,24 @@
 
 # Getting Started
 
-写项目的时候后端同学经常要我打一个测试包,但是又经常需要切换到线上地址查看效果,每次打个包要等几分钟实在太麻烦了.于是便想做个像安卓彩蛋一样的隐藏功能,用来打开开发模式.
-
+写项目的时候后端同学经常要我打一个测试包,但是又经常需要切换到线上地址查看效果,每次打个包要等几分钟实在太麻烦了.大家都知道安卓彩蛋是通过连续点击版本号来触发,于是便想做个像安卓彩蛋一样的隐藏功能,用来打开开发模式.
 
 首先搭建简单的框架,可以点击,渲染 `child`
 ```
 import 'package:flutter/material.dart';
 
-class HiddenFunction extends StatefulWidget {
+class Egg extends StatefulWidget {
   final Widget child;
 
-  HiddenFunction({
+  Egg({
     this.child,
   });
 
   @override
-  _HiddenFunctionState createState() => _HiddenFunctionState();
+  _EggState createState() => _EggState();
 }
 
-class _HiddenFunctionState extends State<HiddenFunction> {
+class _EggState extends State<Egg> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -62,7 +61,7 @@ class _HiddenFunctionState extends State<HiddenFunction> {
 
 我们的组件想通用就不能写死数据,所以给类加上一些参数
 ```
-class HiddenFunction extends StatefulWidget {
+class Egg extends StatefulWidget {
   final Widget child;
 
   /// 总共需要点击的次数
@@ -71,14 +70,14 @@ class HiddenFunction extends StatefulWidget {
   /// 两次点击的间隔
   final Duration interval;
 
-  HiddenFunction({
+  Egg({
     this.child,
     this.neededNum = 5,
     this.interval = const Duration(seconds: 1),
   });
 
   @override
-  _HiddenFunctionState createState() => _HiddenFunctionState();
+  _EggState createState() => _EggState();
 }
 ```
 
@@ -115,14 +114,14 @@ class HiddenFunction extends StatefulWidget {
 ```
 typedef OnTapCallBack = void Function(int tapNum, int neededNum);
 
-class HiddenFunction extends StatefulWidget {
+class Egg extends StatefulWidget {
   
   ...
   
   final OnTapCallBack onTrigger;
   final OnTapCallBack onTap;
 
-  HiddenFunction({
+  Egg({
   
     ...
   
@@ -131,7 +130,7 @@ class HiddenFunction extends StatefulWidget {
   });
 
   @override
-  _HiddenFunctionState createState() => _HiddenFunctionState();
+  _EggState createState() => _EggState();
 }
 ```
 
