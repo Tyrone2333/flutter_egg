@@ -6,6 +6,15 @@
 
 
 # 使用
+添加依赖
+```text
+  flutter_egg: ^1.0.3
+
+```
+
+或者直接复制 `lib/flutter_egg.dart` 文件
+
+## 示例
 ```
             Egg(
               neededNum: 5,
